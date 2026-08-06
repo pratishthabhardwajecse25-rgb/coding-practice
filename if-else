@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int a;
+    float bill;
+    printf("Enter electricity units consumed: ");
+    scanf("%d", &a);
+    if (a<=100)
+        bill = a*10;
+    else if (a<=200)
+        bill = (100*10) + (a-100) * 15;
+    else if (u< 300)
+        bill = (100 * 10) + (100 * 15) + (a - 200) * 20;
+    else
+        bill = (100 * 10) + (100 * 15) + (100 * 20) + (a - 300) * 25;
+    printf("Electricity Bill = Rs. %.2f\n", bill);
+    return 0;
+}
