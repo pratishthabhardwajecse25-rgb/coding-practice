@@ -31,3 +31,32 @@ int main(){
     printf("%d->",n1.data);
     printf("NULL")
 }
+error h ismain-
+#include <stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node *next;
+};
+void insortElement(struct Node **head,int val){
+    struct Node *newNode=malloc(sizeof(struct Node));
+    if(newNode==NULL){
+        printf("Cant insert element\n");
+    }
+    struct Node *temp=*head;
+    if(*head==NULL){
+    *head=newNode;
+    }
+    while(temp->next!=NULL){
+     temp=temp->data;
+    }
+    temp->next=NULL;
+}
+void printlinkedlist(stuct Node *head){
+    struct Node *temp=head;
+    while(temp!=NULL){
+        printf("%d->",temp->data);
+        temp=temp->next;
+    }
+    printf("NULL")
+}
