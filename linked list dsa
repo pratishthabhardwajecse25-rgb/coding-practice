@@ -102,3 +102,72 @@ int main(){
     printlist(head);
 }
 output=10->20->30->40->NULL
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node *next;
+};
+  void  insertElement(struct Node **head, int val){
+    struct Node *newNode=malloc(sizeof(struct Node));
+    //base condition
+    if(newNode==NULL){
+        printf("cant insert\n");
+    }
+    newNode->data=val;
+    newNode->next=NULL;
+    if(*head==NULL){
+        *head=newNode;
+        return;
+    }
+    struct Node *temp=*head;
+      while(temp->next!=NULL){
+          temp=temp->next;
+      }
+      temp->next=newNode;
+}
+void printlist(struct Node *head){
+   struct Node *temp=head;
+    while(temp!=NULL){
+        printf("%d->",temp->data);
+        temp=temp->next;
+    }
+    printf("NULL");
+}
+void insertBeginning(struct Node **head, int val){
+    struct Node *newNode = malloc(sizeof(struct Node));
+    if(newNode == NULL){
+        printf("cant insert\n");
+        return;
+    }
+    newNode->data = val;
+    newNode->next = *head;
+    *head = newNode;
+}
+void insertmiddle(struct Node **head, int val, int pos){
+    struct Node *newNode=malloc(sizeof(struct Node));
+    if(newNode==NULL){
+        printf("cant insert\n");
+        return;
+    }
+    newNode->data = val;
+    struct Node *temp = *head;
+    //node before/after the position
+    for(int i=1; i<pos-1;i++){
+        temp=temp->next;
+    }
+    newNode->next=temp->next;
+    temp->next=newNode;
+}
+int main(){
+  struct  Node *head=NULL;
+    insertElement(&head,10);
+    insertElement(&head,20);
+    insertElement(&head,30);
+    insertElement(&head,40);
+    insertBeginning(&head,13);
+    insertmiddle(&head,70,4);
+    printlist(head);
+}
+output(beginnng)-13->10->20->30->40->NULL
+output(middle)=13->10->20->70->30->40->NULL
