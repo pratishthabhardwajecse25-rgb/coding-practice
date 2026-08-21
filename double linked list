@@ -14,3 +14,25 @@ int main(){
     printf("<->NULL");
 }
 OUTPUT-NULL<->4<->NULL
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node *next;
+    struct Node *prev;
+};
+int main(){
+    struct Node n1;
+    struct Node n2;
+    struct Node n3;
+    n1.data=4;
+    n2.data=45;
+    n3.data=67;
+    n1.next=NULL;
+    n1.prev=NULL;
+    printf("NULL<->%d",n1.data);
+    printf("<->%d",n2.data);
+    printf("<->%d",n3.data);
+    printf("<->NULL");
+}
+output-NULL<->4<->45<->67<->NULL
