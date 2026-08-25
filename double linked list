@@ -36,3 +36,40 @@ int main(){
     printf("<->NULL");
 }
 output-NULL<->4<->45<->67<->NULL
+---------------------------------------------USING FUNCTION----------------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node *next;
+    struct Node *prev;
+};
+void insertAtFirst(struct Node **head, int val){
+    struct Node *newNode = malloc(sizeof(struct Node));
+    if(newNode == NULL){
+        return;
+    }
+    newNode->data = val;
+    newNode->prev = NULL;
+    newNode->next = *head;
+    if(*head != NULL){
+        (*head)->prev = newNode;
+    }
+    *head = newNode;
+}
+int main(){
+    struct Node *head = NULL;
+    insertAtFirst(&head, 10);
+    insertAtFirst(&head, 20);
+    insertAtFirst(&head, 30);
+    struct Node *temp = head;
+    printf("NULL");
+    while(temp != NULL){
+        printf("<->%d", temp->data);
+        temp = temp->next;
+    }
+    printf("<->NULL");
+    return 0;
+}
+OUTPUT-NULL<->30<->20<->10<->NULL
+
