@@ -1,0 +1,12 @@
+(very imp)->LIMITATIONS OF ARRAY:-
+>Insertion and deletion operations are expensive.
+>Inserting at first position requires first pushing the entire array down by one position to make room.
+>Deleting the first element requires shifting all the elements in the list one position up.
+>So worst case of these operations in O(n).
+>Size of the list must be known in advance.
+->LINKED LIST IMPLEMENTATION OF LIST:-
+>To avoid the linear cost of insertion and deletion operations,we need to ensure that the elements of the list are not stored
+contiguously.
+>Linked list basically consists of series of structures,which are not necessarily adjacent in memory.
+>Each structure contain an elements of the list abd a pointer to structure containing its successor 
+>linked list impelementation allow traverse and search operation to e carried out 
