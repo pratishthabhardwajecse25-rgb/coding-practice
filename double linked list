@@ -72,4 +72,3 @@ int main(){
     return 0;
 }
 OUTPUT-NULL<->30<->20<->10<->NULL
-
