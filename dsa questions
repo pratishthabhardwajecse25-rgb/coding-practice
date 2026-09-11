@@ -1,0 +1,126 @@
+1-#include<stdio.h>
+int mySqrt(int x) {
+    int l=1, h=x;
+    int a=0;
+    if (x == 0)
+        return 0;
+    while (l <= h) {
+        int m=(l+h)/2;
+
+        if (m<=x/m) {
+            a=m;
+            l=m+1;
+        }
+        else {
+            h=m-1;
+        }
+    }
+    return a;
+}
+int main() {
+    int x;
+    printf("x:");
+    scanf("%d", &x);
+    printf("sqaure root=%d", mySqrt(x));
+    return 0;
+}//output=sqaure root=9
+3-#include<stdio.h>
+int missingNumber(int nums[], int numsSize) {
+    int s=0;
+    for (int i=0; i<numsSize; i++) {
+        s=s+nums[i];
+    }
+    int n=numsSize;
+    int tl=n*(n+1)/2;
+    return tl-s;
+}
+int main() {
+    int nums[100],n;
+    printf("size:");
+    scanf("%d", &n);
+    printf("elements:");
+    for (int i=0; i<n; i++) {
+        scanf("%d", &nums[i]);
+    }
+    printf("missing= %d", missingNumber(nums, n));
+    return 0;
+} //missing= 2
+
+4-#include<stdio.h>
+#include<stdbool.h>
+bool isAnagram(char s[], char t[]){
+    int i,j,c;
+    for(i=0; s[i]!='\0'; i++){
+        c=0;
+        for(j=0; s[j]!='\0'; j++){
+            if(s[i]==s[j])
+                c++;
+        }
+        for(j=0; t[j]!='\0'; j++){
+            if(s[i]==t[j])
+                c--;
+        }
+        if(c!=0){
+            return false;
+        }
+    }
+    return true;
+}
+int main() {
+    char s[1000],t[1000];
+    printf("first string:");
+    scanf("%s",s);
+    printf("second string:");
+    scanf("%s",t);
+    if(isAnagram(s,t))
+        printf("true");
+    else
+        printf("false");
+    return 0;
+}
+5-#include<stdio.h>
+int main(){
+    char s[100];
+    int tl=0;
+    printf("roman number:");
+    scanf("%s",s);
+    for(int i=0;s[i]!='\0';i++){
+        int cu,n;
+        if(s[i]=='I')
+            cu=1;
+        else if(s[i]=='V')
+            cu=5;
+        else if(s[i]=='X')
+            cu=10;
+        else if(s[i]=='L')
+            cu=50;
+        else if(s[i]=='C')
+            cu=100;
+        else if(s[i]=='D')
+            cu=500;
+        else
+            cu=1000;
+        if(s[i+1]=='I')
+            n=1;
+        else if(s[i+1]=='V')
+            n=5;
+        else if(s[i+1]=='X')
+            n=10;
+        else if(s[i+1]=='L')
+            n=50;
+        else if(s[i+1]=='C')
+            n=100;
+        else if(s[i+1]=='D')
+            n=500;
+        else if(s[i+1]=='M')
+            n=1000;
+        else
+            n=0;
+        if(cu<n)
+            tl=tl-cu;
+        else
+            tl=tl+cu;
+    }
+    printf("%d",tl);
+    return 0;
+}
