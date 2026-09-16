@@ -20,3 +20,4 @@ int main() {
 		printf("%d ",arr[i]);
 	}
 }
+time complexity-n²
