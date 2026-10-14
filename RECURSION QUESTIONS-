@@ -1,0 +1,161 @@
+1-PRINT NUMBERS FROM 1 TO N(USING RECURSION)-
+#include<stdio.h> //ques 1
+void num(int n){
+    if(n==0) //base case
+        return;
+    num(n-1); //recursive call
+    printf("%d",n);
+}
+int main(){
+    int n;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    num(n);
+}
+------------------------------------------------------------------------------------------------------------------------------
+2-PRINT NUMBERS N TO 1(USING RECURSION)-
+#include<stdio.h> //ques 2
+void num(int n){
+    if(n==0) //base case
+        return;
+    printf("%d",n);
+    num(n-1); //recursive call //before print this will
+                                 //take it in desc order
+}
+int main(){
+    int n;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    num(n);
+}
+----------------------------------------------------------------------------------------------------------------------------
+3-FACTORIAL OF N(USING RECURSION)-
+#include<stdio.h> //ques 3
+int fact(int n){
+    if(n==0 || n==1) //base case
+        return 1;
+    return n*fact(n-1); //recursive call and fact formula
+}
+int main(){
+    int n;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    printf("factorial=%d",fact(n));
+}
+----------------------------------------------------------------------------------------------------------------------------
+4-PRINT THE FABONACCI SEQUENCE(USING RECURSION)-
+#include<stdio.h> //ques 4
+int fab(int n){
+//LOGIC-
+//fab(0)=0
+//fab(1)=1
+//fab(2)=fab(1)+fab(0)=1
+//fab(3)=fab(2)+fab(1)=2
+    if(n==0) //base case
+        return 0;
+    if(n==1)
+        return 1; //base case
+    return fab(n-1)+fab(n-2); //recursive call and fab formula
+}
+int main(){
+    int n,i;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        printf("%d",fab(i)); //function call
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+5-PRINT ALL EVEN NUMBERS FROM 1 TO N(USING RECURSION)-
+#include<stdio.h>        //ques-5
+void even(int n){
+    if(n==0)              //base case
+       return;
+    even(n-1);           //recursive call
+    if(n%2==0)          //recursive formula
+       printf("%d",n); //for printing even numbers
+}
+int main(){
+    int n;
+    printf("enter value of n:");
+    scanf("%d",&n);
+    even(n);
+}
+---------------------------------------------------------------------------------------------------------------------------
+6-PRINT ALL ODD NUMBERS FROM 1 TO N(USING RECURSION)-
+#include<stdio.h>        //ques-6
+void odd(int n){
+    if(n==0)              //base case
+       return;
+    odd(n-1);           //recursive call
+    if(n%2!=0)          //recursive formula
+       printf("%d",n); //for printing even numbers
+}
+int main(){
+    int n;
+    printf("enter value of n:");
+    scanf("%d",&n);
+    odd(n);
+}
+---------------------------------------------------------------------------------------------------------------------------
+7-CALCULATE THE SUM FROM 1 TO N-
+#include<stdio.h>  //ques-7
+//sum(0) = 0
+//sum(1) = 1 + 0 = 1
+//sum(2) = 2 + 1 = 3
+//sum(3) = 3 + 3 = 6
+//sum(4) = 4 + 6 = 10
+int sum(int n){
+    if(n==0)              //base case
+       return 0;
+    return n+sum(n-1);    //recursive call and formula
+}
+int main(){
+    int n;
+    printf("enter value of n:");
+    scanf("%d",&n);
+    printf("sum=%d",sum(n));
+}
+---------------------------------------------------------------------------------------------------------------------------
+8-CALCULATE X RAISED TO THE POWER OF N-
+#include<stdio.h>        //ques-8
+int power(int x,int n){
+    if(n==0)              //base case
+       return 1;
+    return x*power(x,n-1);    //recursive call and formula
+}
+int main(){
+    int x,n;
+    printf("enter value of x and value n:");
+    scanf("%d %d",&x,&n);
+    printf("power=%d",power(x,n));
+}
+---------------------------------------------------------------------------------------------------------------------------
+9-PRINT SUM OF DIGITS FOR A NUMBER(USING RECURSION)-
+#include<stdio.h> //ques 9         
+int sumdigit(int n){
+    if(n==0) //base case
+        return 0;
+    return (n%10)+sumdigit(n/10); //recursive call and sumdigit formula
+}
+int main(){
+    int n;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    printf("sum=%d",sumdigit(n)); //function call 
+}
+---------------------------------------------------------------------------------------------------------------------------
+10-REVERSE A STRING(USING RECURSION)-
+#include<stdio.h> //ques 10         
+void rev(char str[],int i){
+    if(str[i]=='\0') //base case
+        return;
+    rev(str,i+1); //recursive call and sumdigit formula
+    printf("%c",str[i]);
+}
+int main(){
+    char str[100];
+    printf("enter the string:");
+    scanf("%s",&str);
+    rev(str,0);
+}
