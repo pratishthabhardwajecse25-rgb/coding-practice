@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(){
+    int a=9,b=6;
+    printf("%d",a++||b--&&++b); //pehle ye honge(b--&&++b)
+}
+O/P-1
+-----------------------------------------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main(){
+    int x=printf("%d",2);
+    printf("%d",x);
+}
+O/P-2
+-----------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main() {
+    int a, b, sum;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    sum = a - (-b);
+    printf("Sum = %d", sum);
+    return 0;
+}
+
+O/P-11 SUM OF TWO NUMBERS WITHOUT using + sign
