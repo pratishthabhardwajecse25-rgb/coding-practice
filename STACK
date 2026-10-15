@@ -1,0 +1,36 @@
+  linear data structure logic                      //add->push
+#include<stdio.h>
+//pseaudo code
+//void push(int x){
+    //if(top==size-1){
+        //printf("stack over");
+        //return;
+    //}
+    //top++;
+    //arr[top]=x;
+//}
+//DRY RUN 
+//size=5 and top=-1 so top==size-1=4 so it is FALSE 
+//top++=top=0 so arr[0]=10
+//top=0 so top==5-0=5 so it is also FALSE
+//top++=top=1 so arr[1]=20
+int size;
+int top=-1;
+int arr[100];
+void push(int x){
+    if(top==size-1){
+        printf("stack overflow");
+        return;
+    }
+    top++;
+    arr[top]=x;
+}
+int main(){
+    int x;
+    printf("enter size");
+    scanf("%d",&size);                      //agr hum loop lagadenge toh kaafi saare elements rkh skte h
+    printf("enter element");
+    scanf("%d",&x);
+    push(x);
+    printf("%d",arr[top]);
+}
