@@ -1,4 +1,5 @@
 STACK HAS TWO FUNCTIONS-1)PUSH AND 2)POP 3)PEEK 4)isSize 4)isEmpty. ->linear data structure logic   
+stack means wait krana
 //add->push\
 #include<stdio.h>
 //pseaudo code
