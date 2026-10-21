@@ -1,4 +1,5 @@
-  linear data structure logic                      //add->push
+STACK HAS TWO FUNCTIONS-1)PUSH AND 2)POP 3)PEEK 4)isSize 4)isEmpty. ->linear data structure logic   
+//add->push\
 #include<stdio.h>
 //pseaudo code
 //void push(int x){
@@ -33,4 +34,93 @@ int main(){
     scanf("%d",&x);
     push(x);
     printf("%d",arr[top]);
+}
+-----------------------------------------------------------------------------------------------------------------------------
+WITH OPERATIONS:-
+#include <stdio.h>
+int size = 5;
+int top = -1;
+int arr[5];
+void push(int x){
+    if(top==size-1){
+        printf("Stack overflow");
+        return;
+    }
+    top++;
+    arr[top]=x;
+}
+int pop(){
+    if(top==-1){
+        printf("Stack overflow");
+        return -1;
+    }
+    int value=arr[top];
+    top--;
+    return value;
+}
+int peek(){
+    if(top==-1){
+        return -1;
+    }
+    return arr[top];
+}
+int isSize(){
+    return top+1;
+}
+int main() {
+    push(10);
+    push(20);
+    printf("Popped: %d\n", pop());
+    printf("Top element: %d\n", peek());
+    printf("Stack size: %d\n", isSize());
+}
+---------------------------------------------------------------------------------------------------------------------------
+STACK APPLICATION(solved by recussive stack):-
+1)infix(in between like a+b so (+) operator here is infix)
+2)postfix(like ab+ so here (+) is postfix)
+3)prefix(+ab here (+) is prefix)
+4)infix to prefix(a+b=>+ab)
+5)infix to postfix(a+b=>ab+)
+6)evaluate postfix
+PRECENDANCY-
+()-highest precendancy
+**(POWER)(R->L)
+/,%,*,+,-(L->R)
+---------------------------------------------------------------------------------------------------------------------------
+ques-. Postfix Evaluation
+Write a C program that evaluates a postfix expression such as 5 3 2 * + 4 - using a stack.
+Support the operators +, -, *, / and single-digit operands.
+#include <stdio.h>
+int arr[100];
+int top=-1;
+void push(int x){
+    top++;
+    arr[top]=x;
+}
+int pop(){
+    int value=arr[top];
+    top--;
+    return value;
+}
+int main(){
+    char s[]="532*+4-";
+    for (int i=0;s[i]!='\0';i++) {
+        if (s[i]>='0'&& s[i]<= '9') {
+            push(s[i]-'0');
+        }
+        else {           //a=3 b=2
+            int b=pop();
+            int a=pop();
+            if (s[i]=='+')
+                push(a+b);
+            else if (s[i]=='-')
+                push(a-b);
+            else if (s[i]=='*')
+                push(a*b);
+            else if (s[i]=='/')
+                push(a/b);
+        }
+    }
+    printf("%d",pop());
+    return 0;
 }
