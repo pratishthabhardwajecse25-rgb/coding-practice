@@ -1,0 +1,2 @@
+Write a C program that sorts the array {45, 12, 89, 33, 7, 56} using Quick Sort. After every
+partition, print the pivot value, the pivot's final index, and the current state of the array.
