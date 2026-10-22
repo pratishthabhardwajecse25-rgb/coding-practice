@@ -5,10 +5,11 @@ void Quicksort(int arr[],int start,int end){ //pivot element=end
         return;
     }
     int pivot=arr[end];
-    int i=i-1;
+    int i=start-1;
     for(int j=start;j<end;j++){
-        i++;
+        
         if(arr[j]<pivot){
+             i++;    
             int temp=arr[i];
             arr[i]=arr[j];
             arr[j]=temp;
@@ -29,4 +30,7 @@ int main(){
     }
     return 0;
 }
+
+
+
 
