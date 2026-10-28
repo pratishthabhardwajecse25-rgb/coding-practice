@@ -82,6 +82,9 @@ STACK APPLICATION(solved by recussive stack):-
 3)prefix(+ab here (+) is prefix)
 4)infix to prefix(a+b=>+ab)
 5)infix to postfix(a+b=>ab+)
+6)PrefixSum
+7)PostfixSum
+8)Tower of Hanoir..
 6)evaluate postfix
 PRECENDANCY-
 ()-highest precendancy
