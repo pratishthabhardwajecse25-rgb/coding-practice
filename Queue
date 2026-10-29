@@ -1,0 +1,73 @@
+#include<stdio.h> //to delete the first element from stack
+#define size 5
+int queue[size];
+int front=-1;
+int rear=-1;
+void enqueue(int x){
+    if(rear==size-1){
+        printf("queue overflow\n");
+        return;
+    }
+    if(front==-1){
+        front=0;
+    }
+    rear++;
+    queue[rear]=x;
+    printf("Value insorted in queue:%d",x);
+}
+int main(){
+    enqueue(10);
+}
+----------------------------------------------------------------------------------------------------------------------------
+WITH ALL FUCTION:-
+#include<stdio.h> //to delete the first element from stack
+#define size 5
+int queue[size];
+int front=-1;
+int rear=-1;
+void enqueue(int x){
+    if(rear==size-1){
+        printf("queue overflow\n");
+        return;
+    }
+    if(front==-1){
+        front=0;
+    }
+    rear++;
+    queue[rear]=x;
+    printf("Value insorted in queue:%d\n",x);
+}
+void dequeue(){
+    if (front==-1){
+        printf("Queue underflow\n");
+        return;
+    }
+    printf("Dlt element:%d\n",queue[front]);
+    if (front==rear){
+        front=-1;
+        rear=-1;
+    } 
+    else{
+        front++;
+    }
+}
+void search(int x){
+    if (front==-1){
+        printf("Queue underflow\n");
+        return;
+    }
+    for(int i=front;i<=rear;i++){
+        if(queue[i]==x){
+            printf("located:%d\n",i-front+1);
+        }
+    }printf("not found");
+}
+int main(){
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+    dequeue();
+    search(20);
+}
