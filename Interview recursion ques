@@ -15,3 +15,83 @@ int main()
     result=count(n);
     printf("Total digits= %d",result);
 }
+-----------------------------------------------------------------------------------------------------------------------------
+Q3. Reverse a Number
+Write a recursive C program to reverse a given number.
+#include<stdio.h>
+int reverse(int n,int rev){
+    if(n==0)
+        return rev;
+    return reverse(n/10,rev*10+n%10);
+}
+int main()
+{
+    int n,result;
+    scanf("%d",&n);
+    result=reverse(n,0);
+    printf("%d",result);
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------
+Q4. Product of Digits
+Write a recursive C program to calculate the product of all digits of a number.
+#include<stdio.h>
+int product(int n)
+{
+    if(n==0)
+        return 1;
+    return (n%10)*product(n/10);
+}
+int main()
+{
+    int n,result;
+    scanf("%d",&n);
+    result=product(n);
+    printf("%d",result);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------
+Q5. Find Maximum Digit
+Write a recursive C program to find the maximum digit in a given number.
+#include<stdio.h>
+int max(int n){
+    if(n<10)
+        return n;
+    int digit=n%10;
+    int m=max(n/10);
+    if(digit>m)
+        return digit;
+    else
+        return m;
+}
+int main()
+{
+    int n,result;
+    scanf("%d",&n);
+    result=max(n);
+    printf("%d",result);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------
+Q6. Check Palindrome Number
+Write a recursive C program to check whether a given number is a palindrome or not.
+#include<stdio.h>
+int reverse(int n,int rev) {
+    if (n==0) {
+        return rev;
+    }
+    return reverse(n/10,rev*10+n%10);
+}
+int main() {
+    int n;
+    scanf("%d",&n);
+    if (n>=0 && n==reverse(n,0)) {
+    printf("Palindrome");
+    }
+    else {
+    printf("Not Palindrome");
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+Q7. Find GCD
+Write a recursive C program to find the Greatest Common Divisor (GCD) of two numbers.
