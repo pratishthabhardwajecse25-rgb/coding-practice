@@ -1,0 +1,17 @@
+Q1. Count Digits
+Write a recursive C program to count the total number of digits in a given number.
+#include <stdio.h>
+int count(int n)
+{
+    if(n==0)
+        return 0;
+    return 1+count(n/10);
+}
+int main()
+{
+    int n,result;
+    printf("number:");
+    scanf("%d", &n);
+    result=count(n);
+    printf("Total digits= %d",result);
+}
